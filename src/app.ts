@@ -87,6 +87,9 @@ export const app = (req: IncomingMessage, res: ServerResponse) => {
         }
         res.end();
         break;
+      default:
+        res.writeHead(404).write("Page is not found.");
+        res.end();
     }
   } else {
     res.writeHead(404).write("Page is not found.");
